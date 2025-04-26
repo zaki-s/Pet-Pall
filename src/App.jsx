@@ -1,14 +1,28 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Pethub from "./Components/Pethub";
+import Routine from "./Components/Routine";
+import Events from "./Components/Events"; // Make sure this exists
 
-
-import React from 'react';
-import './App.css'; // Import your CSS file if you want to style it
-
-const App = () => {
+function App() {
   return (
-    <div className="app-container">
-      <h1>PetPal</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/pethub" element={<Pethub />} />
+        <Route path="/routine" element={<Routine />} />
+        <Route path="/events" element={<Events />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
+
+
+
