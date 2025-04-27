@@ -1,14 +1,19 @@
-const express = require('express');
+import express from 'express';
 
-const cors = require('cors');
+import cors from 'cors';
 
-const morgan = require('morgan');
+import morgan from 'morgan';
 
-require('dotenv').config();
+import dotenv from 'dotenv';
 
-const sequelize = require('./config/db');
+import sequelize from './config/db.js'; // Ensure to add .js extension
 
-const petRoutes = require('./routes/petRoutes');
+import petRoutes from './petRoutes.js'; // Ensure to add .js extension
+
+
+
+
+dotenv.config();
 
 
 const app = express();
@@ -53,8 +58,8 @@ sequelize.authenticate()
 
 app.use((err, req, res, next) => {
 
-    console.error(err.stack);
+  console.error(err.stack);
 
-    res.status(500).json({ message: 'Internal Server Error' });
+  res.status(500).json({ message: 'Internal Server Error' });
 
 });
