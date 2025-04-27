@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function About() {
+const About = () => {
   return (
-    <div>About page</div>
-  )
-}
+    <div className="text-center">
+      <h2 className="text-2xl font-semibold">About Us</h2>
+      <p className="mt-4">This app helps you manage your pets and their routines.</p>
+    </div>
+  );
+};
 
-export default About
+export default About;
 
 
