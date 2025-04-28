@@ -1,17 +1,31 @@
-import express from 'express';
-import sequelize from './config/db.js'; // Adjust path if needed
+import express from "express";
+import cors from "cors";
+import db from "./config/Database.js";
+import ProfileRoutes from "./routes/ProfileRoutes.js";
+import PetRoutes from "./routes/PetRoutes.js";
+import RoutineRoutes from "./routes/RoutineRoutes.js";
+import EventRoutes from "./routes/EventRoutes.js";
 
 const app = express();
 
-// middlewares
+app.use(cors());
 app.use(express.json());
 
-// routes
-// app.use('/api/pets', petRoutes); // example if you have routes
+// API Endpoints
+app.use('/api/profiles', ProfileRoutes);
+app.use('/api/pets', PetRoutes);
+app.use('/api/routines', RoutineRoutes);
+app.use('/api/events', EventRoutes);
 
-const PORT = process.env.PORT || 5000;
+// Connect to Database
+try {
+  await db.authenticate();
+  console.log('Database connected...');
+} catch (error) {
+  console.error('Database connection error:', error);
+}
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+
+
 

@@ -1,0 +1,58 @@
+.petshub-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.pets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pet-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+}
+
+.pet-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pet-card h2 {
+  color: #ff6b6b;
+  margin-top: 10px;
+}
+
+.pet-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.adopt-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.adopt-btn:hover {
+  background-color: #45a049;
+}
