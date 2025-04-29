@@ -7,7 +7,7 @@ const PetsHub = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/Pets");
+        const response = await fetch("http://localhost:3000/api/pets");
         const data = await response.json();
         setPets(data);
       } catch (error) {
@@ -24,11 +24,14 @@ const PetsHub = () => {
       <div className="pets-grid">
         {pets.map((pet) => (
           <div key={pet.id} className="pet-card">
-            <img src={pet.image_url || "/default-pet.jpg"} alt={pet.name} />
+            <img 
+              src={pet.photo || "/default-pet.jpg"} 
+              alt={pet.name} 
+              className="pet-image"
+            />
             <h2>{pet.name}</h2>
-            <p>Breed: {pet.breed}</p>
+            <p>Type: {pet.type}</p>
             <p>Age: {pet.age} years</p>
-            <p>Price: ${pet.price || "Contact for adoption"}</p>
             <button className="adopt-btn">Adopt / Buy</button>
           </div>
         ))}
@@ -38,3 +41,5 @@ const PetsHub = () => {
 };
 
 export default PetsHub;
+
+

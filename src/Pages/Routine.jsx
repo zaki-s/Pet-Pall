@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Routine.css";
 
 const Routine = () => {
   const [routines, setRoutines] = useState([]);
@@ -6,7 +7,7 @@ const Routine = () => {
   useEffect(() => {
     const fetchRoutines = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/routines");
+        const response = await fetch("http://localhost:3000/api/routines");
         const data = await response.json();
         setRoutines(data);
       } catch (error) {
@@ -19,12 +20,20 @@ const Routine = () => {
 
   return (
     <div className="routine-container">
-      <h1>Pet Routines</h1>
-      <div className="routine-list">
+      <h1 className="routine-title">Daily Pet Care Routines 🐾</h1>
+      <div className="routine-grid">
         {routines.map((routine) => (
           <div key={routine.id} className="routine-card">
-            <h2>{routine.activity}</h2>
-            <p>Time: {routine.time}</p>
+            <img
+              src={routine.routine_image || "/default-routine.jpg"}
+              alt={routine.title}
+              className="routine-image"
+            />
+            <div className="routine-content">
+              <h2>{routine.title}</h2>
+              <p>{routine.description}</p>
+              <p className="routine-time">🕒 {routine.time}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -32,4 +41,12 @@ const Routine = () => {
   );
 };
 
-export default Routine; 
+export default Routine;
+
+
+
+
+
+
+
+ 
