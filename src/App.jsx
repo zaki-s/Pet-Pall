@@ -1,24 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Pethub from "./Components/Pethub";
-import Routine from "./Components/Routine";
-import Events from "./Components/Events"; // Make sure this exists
+<<<<<<< HEAD
+import Navbar from "./component/Navbar"; // ✅ Corrected (no "s")
+import Pet from "./Pages/Pet";
+import Routine from "./Pages/Routine";
+import Events from "./Pages/Events";
+import Profiles from "./Pages/Profiles";
+import PetsHub from "./Pages/PetsHub";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pethub" element={<Pethub />} />
-        <Route path="/routine" element={<Routine />} />
-        <Route path="/events" element={<Events />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Profiles />} />
+          <Route path="/pets" element={<Pet />} />
+          <Route path="/routines" element={<Routine />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/petshub" element={<PetsHub />} />
+        </Routes>
+      </div>
   );
 }
 

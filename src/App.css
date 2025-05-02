@@ -1,1 +1,220 @@
 
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #4CAF50;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar a:hover {
+  color: #ddd;
+}
+
+/* Page Styles */
+.home-container,
+.routine-container,
+.events-container,
+.pethub-container,
+.about-container {
+  text-align: center;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-container h1,
+.routine-container h1,
+.events-container h1,
+.pethub-container h1,
+.about-container h1 {
+  font-size: 2rem;
+  color: #4CAF50;
+}
+
+/* Pet Gallery */
+.pets-gallery,
+.routines-list,
+.events-list,
+.pets-for-sale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pet-card,
+.routine-card,
+.event-card,
+.pet-sale-card {
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.pet-card:hover,
+.routine-card:hover,
+.event-card:hover,
+.pet-sale-card:hover {
+  transform: scale(1.05);
+}
+
+.pet-image,
+.routine-image,
+.event-image,
+.sale-pet-image,
+.hospital-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #f4f4f9;
+}
+
+.pet-info,
+.routine-info,
+.event-info,
+.sale-pet-info,
+.hospital-description {
+  padding: 10px;
+}
+
+.pet-info h2,
+.routine-info h2,
+.event-info h2,
+.sale-pet-info h2 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.pet-info p,
+.routine-info p,
+.event-info p,
+.sale-pet-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* About Page */
+.about-container .about-info {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hospital-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hospital-description {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hospital-description h2 {
+  margin-top: 10px;
+}
+
+.hospital-description ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pets-gallery,
+  .routines-list,
+  .events-list,
+  .pets-for-sale {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-container .about-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+  
+
