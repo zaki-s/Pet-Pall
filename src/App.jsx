@@ -1,11 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Navbar from "./component/Navbar"; // ✅ Corrected (no "s")
-=======
 import Navbar from "./component/Navbar";
->>>>>>> 9f5798e (Added login functionality)
 import Pet from "./Pages/Pet";
 import Routine from "./Pages/Routine";
 import Events from "./Pages/Events";
