@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./component/Navbar"; // ✅ Corrected (no "s")
 import Navbar from "./component/Navbar";
 import Pet from "./Pages/Pet";
 import Routine from "./Pages/Routine";
@@ -15,6 +14,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Profiles />} />
           <Route path="/pets" element={<Pet />} />
@@ -25,6 +25,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
+    </Router>
   );
 }
 
